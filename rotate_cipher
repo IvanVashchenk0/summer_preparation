@@ -1,0 +1,26 @@
+def rotate_cipher(text, key):
+  key = 5
+  text = "Wax on"
+  result = ""
+  for i in text:
+    if i in "qazwsxedcrfvtgbyhnujmikolp":
+      letter = i
+      index_letter = ord(i)
+      if index_letter+key > 122:
+        alph_index = chr(index_letter + key - 26)
+        result += alph_index
+      else:
+        alph_index = chr(index_letter+ key)
+        result += alph_index
+    elif i in "QAZWSXEDCRFVTGBYHNUJMIKOLP":
+      letter = i
+      index_letter = ord(i)
+      if index_letter+key > 90:
+        alph_index = chr(index_letter + key - 26)
+        result += alph_index
+      else:
+        alph_index = chr(index_letter+ key)
+        result += alph_index
+    else:
+      result += i
+  return result
