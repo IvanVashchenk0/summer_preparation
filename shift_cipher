@@ -1,0 +1,13 @@
+def shift_cipher(text):
+  result = ""
+  for i in text:
+    if i == "Z":
+      result += "A"
+    elif i == "z":
+      result += "a"
+    else: 
+      letter = i
+      index_letter = ord(i)
+      alph_index = chr(index_letter+1)
+      result += alph_index
+  return result
